@@ -1,0 +1,75 @@
+/*Default settings of each project. Change if necessary:*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/************************/
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  color: rgb(128, 3, 3);
+  cursor: pointer;
+  /*Specify the background image size. It should be centered and not repeated:*/
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  /*Height of each 'panel' should be '80vh':*/
+  height: 80vh;
+  /* Round the pictures from the corners slightly:*/
+  border-radius: 25px;
+  /*'flex' property allows all the flexible items to be the same length without considering the content:*/
+  flex: 0.5;
+  margin: 10px;
+  /*The 'h3' elements inside the panels will be moved. That is why the 'position' of the 'panel' divs are changed to 'relative' (Then the 'h3' elements will be 'positioned' to 'absolute'):*/
+  position: relative;
+  /*Make a 'transition' on 'flex' property: */
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  /*Position the elements 'absolute' to move them within their containers:*/
+  position: absolute;
+  font-size: 20px;
+  /*Move the 'h3' elements to the bottom left corner of each panel:*/
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+  /*Hide the 'h3' elements when the cards are not expanded. The 'h3' will be activated when the card is expanded.*/
+  opacity: 0;
+}
+
+.panel.active {
+  /*Enlarge the picture that is selected with 'flex' property: */
+  flex: 3;
+}
+
+/*Use this class to display the hidden 'h3' elements if the panel is active, which means if a card is expanded:*/
+.panel.active h3 {
+  opacity: 1;
+  /*Make a transition on 'h3' with a delay of '0.5s' in opacity, and a '0.2s' delay in 'ease-in' effect: */
+  transition: opacity 0.5s ease-in 0.2s;
+}
+
+/*When the width of the screen is smaller than 480px, change the 'display' property of the 4th and 5th 'panels' to 'none' in order to hide them when the screen is smaller:*/
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
