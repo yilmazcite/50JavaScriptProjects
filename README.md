@@ -1,2 +1,2 @@
 # 50JavaScriptProjects
-50 basic projects using HTML, CSS, and JavaScript.
+This repository will gradually consist of each one of the 50 basic projects that I will complete.<br>I aim to enhance my JavaScript skills as well as HTML and CSS by the end of each project.<br>The projects are from the Udemy course, "<a href="https://www.udemy.com/course/50-projects-50-days/" target="_blank"><em>50 Projects In 50 Days - HTML, CSS & JavaScript</em></a>" by the instructors Brad Traversy and Florin Pop.
