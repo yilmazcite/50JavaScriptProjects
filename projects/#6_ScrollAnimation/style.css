@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #f7ff93;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.box {
+  background-color: #069a8e;
+  color: wheat;
+  padding: 35px 100px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /*Hide the boxes from sight. As scrolled, they will appear. The 'translateX()' value will be changed to '0' to move the boxes back to their original place:*/
+  transform: translateX(400%);
+  /*Give an animation as the box moves to the center:*/
+  transition: transform 0.4s ease;
+}
+
+/*Only apply the following change to the 'even' elements of the 'box':*/
+.box:nth-of-type(even) {
+  transform: translateX(
+    -400%
+  ); /*Above, the boxes move transform to translate(400%). With even elements the direction is the opposite. So that, each even element will appear from the left and the odd ones from the right.*/
+}
+
+/*Only apply the following change to the 'box' elements with the 'show' class:*/
+.box.show {
+  transform: translateX(
+    0
+  ); /*Above, the boxes move transform to translate(400%) or (-400%). To move them back to their original place, set the previous translateX value to '0'.*/
+}
