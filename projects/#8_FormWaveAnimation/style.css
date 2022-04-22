@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(0, 241, 129);
+  font-weight: bold;
+}
+
+.container {
+  background-color: rgb(4, 141, 77);
+  border-radius: 7px;
+  padding: 30px 50px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.form-info {
+  /*Positioning the container 'relative' because the child element will later be positioned 'absolute':*/
+  position: relative;
+  margin: 20px 0 30px;
+}
+
+.btn {
+  cursor: pointer;
+  /* https://www.w3schools.com/css/css_inline-block.asp */
+  display: inline-block;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  /*Inherit the formerly specified font styles:*/
+  font-family: inherit;
+  font-weight: inherit;
+  padding: 7px 0;
+}
+
+input {
+  /*Get rid of the white field of the input with 'background' property:*/
+  background-color: transparent;
+  /*Only give a border to the input field from the bottom:*/
+  border: 0;
+  /*Without the color, the bottom border also becomes invisible:*/
+  border-bottom: 2px solid rgb(8, 5, 5);
+  display: block;
+  /*The border of the input field will expand:*/
+  width: 100%;
+  color: black;
+  padding: 10px 0;
+}
+
+/*Get rid of the border line that appears when a field is clicked:*/
+input:focus,
+input.valid {
+  outline: 0;
+}
+
+.text a {
+  text-decoration: none;
+  color: wheat;
+}
+
+/*Scale down the button a little bit when it's clicked:*/
+.btn:active {
+  transform: scale(0.98);
+}
+
+.form-info label {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.form-info label span {
+  display: inline-block;
+  min-width: 5px;
+  font-size: 17px;
+  transition: 0.3s cubic-bezier(0.86, -0.55, 0.265, 1.55);
+}
+
+.form-info input:focus + label span,
+.form-info input:valid + label span {
+  transform: translateY(-30px);
+}
