@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(145, 117, 117);
+}
+
+h1 {
+  margin: 30px 0 20px;
+  text-align: center;
+}
+
+p {
+  font-weight: bold;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgb(49, 11, 11);
+  border-radius: 5px;
+  background-color: rgb(247, 202, 120);
+  margin: 10px 0;
+  padding: 20px;
+  max-width: 600px;
+  transition: 0.3s ease;
+}
+
+.faq-active {
+  background-color: rgb(223, 211, 211);
+}
+
+/*Using icons and positioning them with pseudo-selectors:*/
+
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  position: absolute;
+  color: #18e03a;
+  font-size: 7rem;
+  opacity: 0.3;
+  /*With these 'top' and 'left' arrangements, the icon that appears with the '::after' pseudo-selector is simply taken to right where the '::before' icon is: */
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+/*Style only the icon that appears 'before' and re-position it:*/
+.faq.active::before {
+  color: #3498db;
+  top: -10px;
+  left: -35px;
+  transform: rotateY(180deg);
+}
+
+.faq-title {
+  margin: 0 35px 0 0;
+}
+
+/*Hide the 'faq-answer' until the 'faq' has the 'active' class:*/
+.faq-answer {
+  display: none;
+}
+
+/*Display the text inside 'faq-answer' when 'faq' has the 'active' class:*/
+.faq.active .faq-answer {
+  display: block;
+}
+
+.faq-toggle {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  padding: 0;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  display: block;
+  color: white;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: #9fa4a8;
+}
