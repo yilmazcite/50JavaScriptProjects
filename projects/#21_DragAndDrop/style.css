@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+}
+
+body {
+  background-color: rgb(44, 131, 202);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.empty {
+  width: 150px;
+  height: 150px;
+
+  margin: 10px;
+
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.fill {
+  background-image: url('https://source.unsplash.com/random/150x150');
+
+  cursor: pointer;
+
+  width: 144px;
+  height: 144px;
+}
+
+.hold {
+  border: 5px solid rgb(199, 191, 191);
+}
+
+.hovered {
+  background-color: rgb(70, 67, 67);
+  border-color: white;
+  border-style: dashed;
+}
